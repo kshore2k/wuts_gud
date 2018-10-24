@@ -45,9 +45,9 @@ def news(request):
     reddit = praw.Reddit(client_id = 'yCZy9qTv6HOciw', client_secret = 'Mq7dRceUdWpeLUigbX7U_Wedk44', username = 'deadbeat253' , password = 'Billionaire710', user_agent = 'prawtest')
 
     subreddit = reddit.subreddit('UpliftingNews')
-
+    
     hot_news = subreddit.hot(limit=50)
-
+    
     for submission in hot_news:
         if not submission.stickied:
                 context = {
@@ -71,7 +71,7 @@ def tech(request):
 
                 return render(request,"reddit/tech.html", context)
 
-def habits(request):
+def lifestyle(request):
     reddit = praw.Reddit(client_id = 'yCZy9qTv6HOciw', client_secret = 'Mq7dRceUdWpeLUigbX7U_Wedk44', username = 'deadbeat253' , password = 'Billionaire710', user_agent = 'prawtest')
 
     subreddit = reddit.subreddit('GetMotivated')
@@ -100,6 +100,7 @@ def quotes(request):
                 }
 
                 return render(request,"reddit/quotes.html", context)
+
 
 
 
