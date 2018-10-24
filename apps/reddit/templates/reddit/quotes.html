@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <title>ïηšpïrα†ï⊕η</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+    .links{
+        font-size: 20px;
+    }
+    body{
+        background-image: url(https://data.whicdn.com/images/142508540/large.jpg);
+        text-align: center;
+    }
+    /* .wrapper{
+        width: 975px;
+        background-color: aqua;
+        text-align: center;
+    } */
+    .article_container{
+        width: 300px;
+        height: 300px;
+        background-color: rgb(228, 228, 228);
+        display: inline-block;
+        vertical-align: top;
+        border: 3px solid black;
+        margin-top: 50px;
+        margin-left: 5px;
+        border-radius: 5px;
+        overflow: auto;
+    }
+    .article_img{
+        width: 300px;
+        height: 180px;
+        /* background-color: azure; */
+        text-align: center;
+        margin-top: 5px;
+    }
+    .image{
+        width: 250px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+    .article_link{
+        margin-top: 10px;
+    }
+    a{
+        text-decoration: none;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .button_container{
+        display: block;
+        margin-top: 5px;
+        margin-left: 110px;
+        position: fixed;
+    }
+    button{
+        width: 150px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="button_container">
+            <form action="/">{% csrf_token %}
+                <button type="submit" class="btn btn-success">ⱧØ₥Ɇ</button>
+            </form>
+        </div>
+        
+        {% for submission in hot_news %}
+        <div class="article_container">
+            <div class="article_img">{% if submission.thumbnail != 'self' %}
+                <a href="{{ submission.url }}"><img class="image" src="{{ submission.thumbnail }}" alt="thumbnail"></a>{% else %}
+                <a href="{{ submission.url }}"><img class="image" src="https://driven2automotive.com/2779-home_default/car-parts-vdo-a2c59506249-air-flap-actuator.jpg" alt="thumbnail"></a>{% endif %}
+            </div>
+
+            <p class="article_link"><a href="{{ submission.url }}">{{ submission.title }}</a></p>
+
+        </div>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
