@@ -10,13 +10,17 @@ I like to stay informed with what's going on in the world but I get tired of see
 - **CSS3** styling
 ## Screenshots
 Landing
+
 <img src="./resources/landing.png" alt="Wats-Gud landing page" />
 
 Landing(mobile)
+
 <img src="./resources/landing-mobile.jpg" width="250" alt="Wats-Gud mobile landing page" />
 
 Newsfeed
+
 <img src="./resources/news.png" alt="Wats-Gud newsfeed" />
 
 Newsfeed(mobile)
+
 <img src="./resources/news-mobile.jpg" width="250" alt="Wats-Gud mobile newsfeed" />
